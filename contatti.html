@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - GVFC</title>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "EZoeTiMOVjbTneoi6",
+  });
+})();
+</script>
+</head>
+
+    <link rel="stylesheet" href="css/contatti.css">
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+<link rel="manifest" href="site.webmanifest" />
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="images/logo-greenvalley.png" alt="Logo" class="loading-logo">
+    </div>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <img src="images/logo-greenvalley.png" alt="Logo" class="navbar-logo">
+            <nav class="navbar-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="squadra.html">Squadra</a></li>
+
+                    <li><a href="sponsor.html">Sponsor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+    <h2>Contattaci</h2>
+    <p>Hai domande o vuoi metterti in contatto con noi? Compila il modulo qui sotto e ti risponderemo il prima possibile!</p>
+    <div class="contact-divider"></div>
+    <form class="contact-form" action="#" method="post" id="contactForm">
+        <input type="text" name="name" placeholder="Il tuo nome" required>
+        <input type="email" name="email" placeholder="La tua email" required>
+        <textarea name="message" rows="5" placeholder="Il tuo messaggio" required></textarea>
+        <button type="submit">Invia</button>
+    </form>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Greenvalley FC. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita il refresh della pagina
+
+            const params = {
+                name: document.querySelector('input[name="name"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                message: document.querySelector('textarea[name="message"]').value,
+            };
+
+            const serviceID = "gvfcemailservice";
+            const templateID = "gvfctemplate";
+
+            emailjs.send(serviceID, templateID, params)
+                .then(function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    alert("Email inviata con successo!");
+                }, function (error) {
+                    console.log("FAILED...", error);
+                    alert("C'è stato un problema nell'invio dell'email.");
+                });
+        });
+    </script>
+
+</body>
+</html>
