@@ -1,0 +1,657 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile generale del body */
+body {
+    margin: 0;
+    padding-top: 70px; /* Compensa l'altezza dell'header */
+    font-family: 'Prose Sans Bold';
+    background: url('../images/sfondo.webp') no-repeat center center fixed; /* Immagine di sfondo */
+    background-size: cover; /* Copre l'intero schermo */
+    transition: background-color 0.3s ease; /* Transizione fluida */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+    background-attachment: fixed; /* L'immagine rimane fissa mentre si scorre la pagina */
+    color: #e0e0e0; /* Testo grigio chiaro */
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 20px;
+    overflow-x: hidden; /* Evita scrolling orizzontale */
+}
+
+/* Quando lo sfondo scompare */
+body.scrolled {
+    background-color: black; /* Sostituisce l'immagine con un colore */
+    background-image: none; /* Rimuove l'immagine */
+}
+
+
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 100vh; /* Occupa tutta l'altezza dello schermo */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-text-stroke: 0.5px #000; /* Contorno nero */
+
+    color: #ecf02b;
+}
+
+/* Titolo sovrapposto */
+.hero-title {
+    font-size: 3rem; /* Dimensione del titolo */
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Ombra per il testo */
+    margin: 0;
+}
+.hero-divider {
+    width: 80px; /* Larghezza della riga */
+    height: 4px; /* Spessore della riga */
+    background-color: #00ffc89a; /* Colore della riga */
+    border: none; /* Rimuove i bordi predefiniti */
+    margin: 20px 0; /* Spaziatura sopra e sotto la riga */
+}
+
+/* Sottotitolo */
+.hero-subtitle {
+    font-size: 1.5rem; /* Dimensione del sottotitolo */
+    font-weight: 300; /* Peso più leggero rispetto al titolo */
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Ombra più leggera per leggibilità */
+}
+.fullscreen-section {
+    height: 100%; /* Ogni sezione copre l'intero schermo */
+    width: 100%;
+    padding: 40px 20px;
+    color: #333; /* Testo scuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-section.hidden{
+    opacity: 0;
+    transform: translateY(-100px); 
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+.fullscreen-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#squadra {
+    background-color: #e0e0e0; /* Cambia colore per differenziare */
+}
+
+#notizie {
+    background-color: #00310083;
+}
+
+#sponsor {
+    background-color: #00000000;
+}
+/* Sezione Notizia Principale */
+.news-section {
+    padding: 40px 20px;
+    background-color: #00310083; /* Sfondo chiaro */
+    color: #ffffff; /* Testo scuro */
+    text-align: center;
+}
+
+/* Sezione Ultime Notizie */
+.news-list {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Sfondo bianco */
+    color: #ffffff; /* Testo scuro */
+    text-align: center;
+}
+/* Stile per l'header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(31, 31, 31, 0.8); /* Sfondo semi-trasparente per evidenziare il logo e il menu */
+}
+
+/* Barra menu generale */
+/* Barra menu generale */
+/* Barra menu generale */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: transparent;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Navbar ridotta durante lo scroll */
+.navbar.scrolled {
+    height: 70px;
+    background-color: #089ce4;
+}
+
+/* Logo */
+.navbar-logo {
+    height: 80px; /* Altezza maggiore in cima */
+    position: absolute; /* Posiziona il logo indipendentemente dagli altri elementi */
+    left: 50%;
+    transform: translateX(-50%); /* Centro esatto */
+    transition: height 0.3s ease; /* Transizione fluida */
+}
+
+
+.navbar.scrolled .navbar-logo {
+    height: 50px; /* Altezza ridotta del logo */
+}
+
+
+/* Contenitore logo e menu */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Allinea il contenuto all'intera larghezza */
+}
+
+
+.navbar-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar-menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu ul li a:hover {
+    color: #e5ff00;
+}
+
+
+/* Stile per i link nel menu */
+/* Stile per il menu in orizzontale */
+nav ul {
+    list-style: none; /* Rimuove i puntini dall'elenco */
+    display: flex; /* Dispone gli elementi del menu in riga */
+    justify-content: center; /* Centra il menu orizzontalmente */
+    gap: 20px; /* Spazio tra le voci */
+    padding: 0; /* Rimuove il padding */
+    margin: 0; /* Rimuove il margine */
+}
+
+/* Stile per le voci del menu */
+nav ul li {
+    margin: 0; /* Nessun margine aggiuntivo */
+}
+
+/* Stile per i link del menu */
+nav ul li a {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: bold; /* Testo in grassetto */
+    color: #00ff00; /* Colore verde */
+    position: relative; /* Necessario per il posizionamento della barra */
+    transition: color 0.3s ease; /* Animazione del colore */
+}
+
+/* Hover sul link */
+nav ul li a:hover {
+    color: #ffffff; /* Cambia il colore a bianco */
+}
+
+/* Barra sotto i link */
+nav ul li a::after {
+    content: ""; /* Crea il contenuto */
+    position: absolute;
+    bottom: -5px; /* Posizione rispetto al testo */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Altezza della barra */
+    background: yellow; /* biancoverde */
+    transform: scaleX(0); /* Nascondi la linea inizialmente */
+    transform-origin: left; /* Punto di partenza per l'animazione */
+    transition: transform 0.3s ease; /* Animazione fluida */
+}
+
+/* Hover per mostrare la barra */
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Mostra la barra quando si va in hover */
+}
+/* Sezione dei servizi */
+.servizi-section {
+    background: linear-gradient(135deg, #0077b6, #00d4ff);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffdd00;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.section-divider {
+    width: 100px;
+    height: 5px;
+    background-color: #ffdd00;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #ffe066;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenitore delle colonne */
+.service-columns-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Singola colonna */
+.service-column {
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #ffdd00; /* Richiama lo stile dorico */
+}
+
+.service-column:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Intestazione della colonna */
+.column-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.column-header i {
+    font-size: 3rem;
+    color: #ffdd00;
+    -webkit-text-stroke: 0.5px black; /* Spessore e colore del contorno */
+
+    margin-bottom: 10px;
+}
+
+.column-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #0077b6;
+}
+
+/* Elenco dei servizi */
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.service-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0077b6;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Sezione Banco Alimentare */
+.banco-section {
+    background: linear-gradient(135deg, #ffa726, #ffcc80);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo del Banco Alimentare */
+.banco-logo-container {
+    margin-bottom: 20px;
+}
+
+.banco-logo {
+    max-width: 150px; /* Dimensione del logo */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Titolo e Divider */
+.banco-section .section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ad5a40;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px #000; /* Contorno nero */
+}
+
+.banco-section .section-divider {
+    width: 100px;
+    height: 5px;
+    background-color: #ff5722;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.banco-section .section-subtitle {
+    font-size: 1.2rem;
+    color: #fff3e0;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Colonne Banco Alimentare */
+.banco-section .service-columns-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banco-section .service-column {
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #ffa726;
+    text-align: left;
+}
+
+.banco-section .service-column:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Intestazione delle colonne */
+.banco-section .column-header {
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.banco-section .column-header i {
+    font-size: 2.5rem;
+    color: #ffa726;
+}
+
+.banco-section .column-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #ff5722;
+}
+
+/* Testo delle colonne */
+.banco-section .service-column p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    color: #333;
+    border-top: 5px solid #0077b6;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    margin-left: auto; /* Spinge l'immagine verso destra */
+    max-width: 150px; /* Dimensione massima dell'immagine */
+    height: auto; /* Mantiene le proporzioni */
+    display: block;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+/* Schermata di caricamento */
+/* Caricamento visibile su mobile */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #ff0000; /* Testo rosso */
+    font-size: 1.5em;
+    text-align: center;
+    visibility: visible; /* Garantisce visibilità */
+}
+
+.loading-logo-desktoponly {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loading-logo-mobileonly {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 769px) {
+    .loading-logo-desktoponly{
+        display: block;
+    }
+    .loading-logo-mobileonly
+    {
+        display: none;
+    }
+}
+@media (max-width: 768px) 
+{
+    .loading-logo-desktoponly{
+        display: none;
+    }
+    .loading-logo-mobileonly
+    {
+        display: block;
+    }
+}
+
+/* Media Queries */
+/* Posizionamento del logo sopra la navbar su mobile */
+
+
+@media (max-width: 768px) {
+    .navbar-logo {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 60px; /* Altezza ridotta */
+        z-index: 1001; /* Sempre sopra la navbar */
+        transition: opacity 0.2s ease, transform 0.1s ease; /* Transizioni fluide */
+    }
+
+    .navbar.scrolled .navbar-logo {
+        opacity: 0; /* Logo scompare durante lo scroll */
+        transform: translateY(-20px); /* Effetto scorrimento verso l'alto */
+    }
+    .navbar {
+        position: fixed;
+        top: 60px; /* Inizia sotto il logo */
+        width: 100%;
+        height: 60px; /* Altezza standard della navbar */
+        background-color: rgba(31, 31, 31, 0.8);
+        z-index: 1000; /* Sotto al logo */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        transition: top 0.3s ease; /* Transizione per il movimento */
+    }
+
+    /* Durante lo scroll: il logo scompare e la navbar si alza */
+    .navbar.scrolled {
+        top: 0; /* Navbar si posiziona in cima */
+    }
+
+    .navbar-logo.scrolled {
+        opacity: 0; /* Nasconde il logo */
+        transform: translateY(-20px); /* Effetto di scorrimento verso l'alto */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        height: 50px; /* Logo ancora più piccolo */
+        top: 10px; /* Margine superiore minore */
+    }
+}
+@media (max-width: 480px) {
+    #loading-screen {
+        font-size: 1.2em; /* Testo più piccolo */
+    }
+
+    .loading-logo {
+        width: 70px; /* Logo più piccolo su schermi piccoli */
+    }
+}
+@media (max-width: 768px) {
+    .service-columns-container {
+        grid-template-columns: 1fr; /* Una colonna per riga */
+        gap: 20px; /* Spazio tra le colonne */
+    }
+
+    .service-column {
+        width: 100%; /* La colonna occupa tutta la larghezza */
+        margin: 0 auto; /* Centra le colonne */
+    }
+}
+/* Stile responsivo per dispositivi mobili */
+@media (max-width: 768px) {
+    /* Colonne dei Servizi */
+    .service-columns-container {
+        grid-template-columns: 1fr; /* Una colonna per riga */
+        gap: 20px; /* Spazio tra le colonne */
+    }
+
+    .service-column {
+        width: 100%; /* La colonna occupa tutta la larghezza */
+        margin: 0 auto; /* Centra le colonne */
+    }
+
+    /* Colonne del Banco Alimentare */
+    .banco-section .service-columns-container {
+        grid-template-columns: 1fr; /* Una colonna per riga */
+        gap: 20px;
+    }
+
+    .banco-section .service-column {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* css made by Alongio*/
