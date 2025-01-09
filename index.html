@@ -9,8 +9,8 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Greenvalley FC" />
     <link rel="manifest" href="site.webmanifest" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Schermata di caricamento -->
@@ -22,14 +22,24 @@
     <!-- Header -->
     <header class="navbar">
         <div class="navbar-container">
+            <!-- Logo centrale -->
             <img src="images/favicon-96x96.png" alt="Logo Misericordia" class="navbar-logo">
+            
+            <!-- Menu -->
             <nav class="navbar-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="squadra.html">Squadra</a></li>
-                    <li><a href="#notizie">Notizie</a></li>
-                    <li><a href="sponsor.html">Sponsor</a></li>
-
+                    <li><a href="Mezzi.html">Mezzi</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/misericordia.divalverde/" target="_blank" class="social-icon facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@mercypower12" target="_blank" class="social-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,47 +52,126 @@
         <p class="hero-subtitle">Uniti nella fede, dedicati al servizio</p>
     </section>
 
-    <!-- Sezione Notizia Principale -->
-    <section id="notizia-principale" class="news-section">
-        <div class="news-content">
-            <article>
-                <h2>Greenvalley perde per un soffio contro l'Everton</h2>
-                <p>Uno sfortunato autogol del capitano regala la vittoria agli avversari, dopo che la squadra ha giocato oltre le sue migliori aspettative.</p>
-            </article>
-        </div>
-        <div class="news-image">
-            <img src="images/torneo1.png" alt="Immagine della partita" width="600">
+    <section id="servizi" class="fullscreen-section servizi-section">
+        <h2 class="section-title">I Servizi che Offriamo</h2>
+        <hr class="section-divider">
+        <p class="section-subtitle">Una panoramica completa dei servizi dedicati alla comunità, con attenzione, dedizione e impegno.</p>
+    
+        <div class="service-columns-container">
+            <!-- Colonna: Servizi Sanitari -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Servizi Sanitari</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Trasporto sanitario ordinario (visite, terapie, dimissioni)</li>
+                    <li>Trasporto dializzati</li>
+                    <li>Trasporto pazienti allettati</li>
+                    <li>Supporto per la mobilità ridotta (portantine, sollevatori)</li>
+                </ul>
+            </div>
+    
+            <!-- Colonna: Servizi Sociali -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Servizi Sociali</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Pronto spesa e farmaci a domicilio</li>
+                    <li>Supporto per famiglie in difficoltà</li>
+                    <li>Assistenza ad anziani soli</li>
+                    <li>Distribuzione pasti e beni essenziali</li>
+                </ul>
+            </div>
+    
+            <!-- Colonna: Protezione Civile -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Protezione Civile</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Interventi durante calamità naturali (terremoti, alluvioni)</li>
+                    <li>Supporto logistico in emergenze</li>
+                    <li>Evacuazioni e gestione sfollati</li>
+                    <li>Punti di primo soccorso per eventi pubblici</li>
+                    <li>Formazione sulla sicurezza e gestione emergenze</li>
+                </ul>
+            </div>
         </div>
     </section>
-
-    <!-- Sezione Ultime Notizie -->
-    <section id="ultime-notizie" class="news-list">
-        <h3>Ultime Notizie</h3>
-        <article>
-            <h4>Risultati dell'ultimo allenamento</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Giocatore</th>
-                        <th>Descrizione</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Sorbello Fabrizio</td>
-                        <td>Svolto allenamento personalizzato mirato alla crescita individuale e al rafforzamento dei fondamentali con piede debole</td>
-                    </tr>
-                </tbody>
-            </table>
-        </article>
+    <section id="banco-alimentare" class="fullscreen-section banco-section">
+        <!-- Logo del Banco Alimentare -->
+        <div class="banco-logo-container">
+            <img src="images/logo.png" alt="Logo Banco Alimentare" class="banco-logo">
+        </div>
+    
+        <h2 class="section-title">Banco Alimentare</h2>
+        <hr class="section-divider">
+        <p class="section-subtitle">Un processo semplice e trasparente, che ci unisce per aiutare chi ha più bisogno.</p>
+    
+        <div class="service-columns-container">
+            <!-- Colonna: Raccolta -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-donate"></i>
+                    <h3>Raccolta</h3>
+                </div>
+                <p>Raccogliamo generi alimentari donati da supermercati, aziende e privati durante eventi come la Giornata della Colletta Alimentare.</p>
+            </div>
+    
+            <!-- Colonna: Distribuzione -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Distribuzione</h3>
+                </div>
+                <p>Smistiamo i prodotti raccolti presso il nostro magazzino e li distribuiamo alle famiglie bisognose della comunità.</p>
+            </div>
+    
+            <!-- Colonna: Coinvolgimento -->
+            <div class="service-column">
+                <div class="column-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Coinvolgimento</h3>
+                </div>
+                <p>Collaboriamo con volontari, scuole e associazioni per sensibilizzare sull'importanza della lotta allo spreco alimentare.</p>
+            </div>
+        </div>
     </section>
-
+    
     <!-- Footer -->
-    <footer id="contatti">
-        <p>&copy; 2024 Greenvalley FC. Tutti i diritti riservati.</p>
-        <a href="contatti.html">Contatti</a>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Le Misericordie</h4>
+                <p>
+                    La Confederazione riunisce oggi oltre 700 confraternite, alle quali aderiscono circa 670 mila iscritti,
+                    dei quali oltre 100 mila sono impegnati permanentemente in opere di carità.
+                </p>
+                <a href="#">Chi siamo »</a>
+            </div>
+            <div class="footer-section">
+                <h4>Misericordia di Valverde ODV</h4>
+                <p>
+                    Sede di Valverde<br>
+                    Via Giuseppe Calì 43 - 95028 Valverde<br>
+                    Centralino 095 524771<br>
+                </p>
+            </div>
+            <img src="images/Logo_Misericordie.jpg" alt="Logo Misericordie" class="footer-logo">
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Misericordia di Valverde. Tutti i diritti riservati.</p>
+            <a href="#">Privacy e cookie policy</a> |
+            <a href="#">Contatti</a>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
 </html>
+<!--A site made by Alongio-->
